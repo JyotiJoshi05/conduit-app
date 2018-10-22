@@ -1,0 +1,36 @@
+
+.text{
+    padding:10px;
+}
+li{
+    list-style: none;
+}
+.commentbody{
+    border:solid 1px lightgrey ;
+    border-radius:5px;
+    margin:50px;
+    background: white;
+}
+img{
+    width:40px;
+    height:40px;
+    float:left;
+    margin: 5px;
+}
+.btn{
+    margin-top: 10px;
+    width: 120px;
+    font-size:14px;
+    height: 40px;
+}
+.uname{
+    color:cornflowerblue;
+    margin-left:5px;
+    float:left;
+    margin: 5px;
+}
+.date{
+    margin-left:5px;
+    color:grey;
+    float:left;
+}

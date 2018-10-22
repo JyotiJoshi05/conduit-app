@@ -1,0 +1,38 @@
+.banner{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 83.33333%;
+    max-width: 40%;
+    margin:0px auto;
+
+}
+.main{
+    background: lightgrey;
+    padding: 10px;
+    height:215px;
+}
+.body{
+    margin-top:10px;
+    padding-left:50px;
+}
+.profile{
+    
+}
+.btn{
+    width:160px;
+    height:40px;
+    color:white;
+    background: transparent;
+    border:solid 1px white;
+    border-radius:4px;
+    float:right;
+    font-weight:600;
+    font-size:14px;
+}
+img{
+    width:100px;
+    height:100px;
+    margin:10px auto;
+}

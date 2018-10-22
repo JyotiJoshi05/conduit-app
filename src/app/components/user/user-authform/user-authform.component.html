@@ -1,0 +1,42 @@
+<div class="auth-page">
+    <div class="container page">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 col-xs-12">
+          <h1 class="text-xs-center">{{ title }}</h1>
+          <p class="text-xs-center">
+            <a [routerLink]="['/login']" *ngIf="authType == 'register'">Have an account?</a>
+            <a [routerLink]="['/register']" *ngIf="authType == 'login'">Need an account?</a>
+          </p>
+          <div class="errors ">
+            <error-list [errors]="errors" ></error-list>
+          </div>          
+          <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+            <fieldset [disabled]="isSubmitting">
+                <input
+                  formControlName="username"
+                  placeholder="Username"
+                  class="form-control form-control-lg"
+                  type="text"
+                  *ngIf="authType == 'register'" />
+                  <div *ngIf="authForm.get('username') && authForm.get('username').touched && authForm.get('username').invalid" class="alert alert-danger">UserName is Required</div>
+                <input
+                  formControlName="email"
+                  placeholder="Email"
+                  class="form-control form-control-lg"
+                  type="text" />
+                  <div *ngIf="authForm.get('email') && authForm.get('email').touched && authForm.get('email').invalid" class="alert alert-danger">Email is Required</div>
+                <input
+                  formControlName="password"
+                  placeholder="Password"
+                  class="form-control form-control-lg"
+                  type="password" />
+                  <div *ngIf="authForm.get('password') && authForm.get('password').touched && authForm.get('password').invalid" class="alert alert-danger">Password is Required</div>
+              <button class="btn btn-lg btn-primary pull-xs-right" [disabled]="!authForm.valid" type="submit">
+                {{ title }}
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

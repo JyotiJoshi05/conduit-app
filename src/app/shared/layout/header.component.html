@@ -1,0 +1,57 @@
+<nav class="navbar">
+  <a class="navbar-brand nav-link" routerLink="/">conduit</a>
+  <div class="navbar-expand ml-auto navbar-nav">
+    <div class="navbar-nav"  *ngIf= "!auth">
+        <a class="nav-item nav-link" routerLink="/">
+          Home
+        </a>
+        <a class="nav-item nav-link"  routerLinkActive="active" [routerLink]="['/login']">
+          SignIn
+        </a>
+        <a class="nav-item nav-link"  routerLinkActive="active" [routerLink]="['/register']">
+          SignUp
+        </a>
+    </div>
+    <div class="navbar-nav"  *ngIf="auth">
+        <a class="nav-item nav-link" routerLink="/">
+          Home
+        </a>
+          <a class="nav-item nav-link"  routerLinkActive="active" [routerLink]="['/create']">
+            New Article
+          </a>
+          <!-- <a class="nav-item nav-link"  routerLinkActive="active" [routerLink]="['/settings']">
+            Settings
+          </a> -->
+          <a class="nav-item nav-link" [routerLink]="['/profile']">
+            {{currentUser.username}}
+          </a>
+          <button class="nav-item nav-link btn" (click)="logout()" routerLinkActive="active" >
+            Logout
+          </button>
+    </div>
+  </div>
+</nav>
+<style scoped='true'>
+  .nav-item{
+    color:black;
+  }
+  .navbar{
+    background:#2b7a78;
+}
+.navbar-brand{
+    font-weight:700;
+}
+.nav-link{
+    color:white;
+}
+.nav-link:hover{
+    color:#3aafa9;
+}
+.active{
+    color:darkturquoise;
+    font-weight: 500;
+}
+.btn{
+  background-color: #2b7a78;
+}
+</style>

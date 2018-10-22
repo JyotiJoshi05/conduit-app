@@ -1,0 +1,82 @@
+.banner{
+    padding:20px;
+    background: grey;
+    color:white;
+    height:200px;
+}
+.title{
+    font-size:40px;
+}
+.descright{
+   float:right;
+   margin-bottom:20px;
+   
+}
+
+p{
+    margin-left: 20px;
+}
+p a{
+    color:cornflowerblue;
+    
+}
+p a:hover{
+    color:darkblue;
+    cursor: default;
+}
+.uimage,.uname,.follow,.fav{
+    float:left;
+    margin:10px;
+    margin-right: 0px;
+}
+img{
+    width:30px;
+    height:30px;
+    border-radius: 10px;
+}
+.uname{
+
+}
+.details{
+    min-height: 100px;
+    padding:50px;
+}
+.follow,.fav{
+    border: solid 2px darkgrey;
+    color: white;
+    width: 100px;
+    border-radius: 6px;
+    background: darkgrey;
+
+}
+.fav{
+    border: solid 2px #2b7a78;
+    color: white;
+    background-color: #2b7a78;
+    width: 180px;
+
+}
+.edit{
+    border:solid 2px lightgrey;
+    background-color: grey;
+    color:white;
+}
+.edit:hover{
+    border:solid 2px lightgrey;
+    background-color: darkgrey;
+    color:white;
+}
+.del{
+    border:solid 2px rgb(120, 6, 6);
+    color:white;
+    width:160px;
+    background: rgb(120, 17, 17);
+}
+.del:hover{
+    color:white;
+    background-color: grey;
+
+}
+.clear{
+    clear:both;
+}

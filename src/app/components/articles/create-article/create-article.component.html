@@ -1,0 +1,54 @@
+<div class="art">
+    <div class="container page">
+      <div class="row">
+        <div class="form">
+          <div *ngIf="errors" class="errors ">
+            <error-list [errors]="errors" ></error-list>
+          </div>          
+          <form [formGroup]="createArticleForm" >
+            <fieldset [disabled]="isSubmitting">
+                <input
+                  formControlName="title"
+                  placeholder="Article Title"
+                  class="form-control form-control-lg"
+                  type="text" value="{{article.title}}"
+                  />
+                  <div *ngIf="createArticleForm.get('articletitle') && createArticleForm.get('articletitle').touched && createArticleForm.get('articletitle').invalid" class="alert alert-danger">Article Title is Required</div>
+                <input
+                  formControlName="description"
+                  placeholder="What's this article about?"
+                  class="form-control form-control-lg"
+                  value="{{article.description}}"
+                  type="text" />
+                  <div *ngIf="createArticleForm.get('articledesc') && createArticleForm.get('articledesc').touched && createArticleForm.get('articledesc').invalid" class="alert alert-danger">Article Description is Required</div>
+                <textarea
+                  formControlName="body"
+                  value="{{article.body}}"
+                  placeholder="Write your article(in markdown)"
+                  class="form-control form-control-lg"
+                  type="text" rows="8"></textarea>
+                  <div *ngIf="createArticleForm.get('articlebody') && createArticleForm.get('articlebody').touched && createArticleForm.get('articlebody').invalid" class="alert alert-danger">Password is Required</div>
+                  <fieldset class="form-group">
+                      <input class="form-control"
+                        type="text"
+                        placeholder="Enter tags"
+                        [formControl]="tagField"
+                        (keyup.enter)="addTag()" />
+                  <div class="tag-list">
+                      <span *ngFor="let tag of article.tagList"
+                        class="tag-default tag-pill">
+                        <fa-icon [icon]="cross"> </fa-icon>
+                        <i class="ion-close-round" (click)="removeTag(tag)"></i>
+                        {{ tag}}
+                      </span>
+                    </div>
+                    </fieldset>
+                <button class="btn btn-lg btn-primary pull-xs-right" (click)="createArticle()" type="submit">
+                Publish Article
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

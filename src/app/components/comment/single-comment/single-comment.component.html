@@ -1,0 +1,21 @@
+<div >
+  <div class="text">
+    {{comment.body}}
+  </div>
+  <div class="udetails">
+    <div class="img">
+      <img src="{{comment.author.image}}">
+    </div>
+    <div class="uname">
+      {{comment.author.username}}
+    </div>
+    <div class="date">
+      {{comment.createdAt | date:'MMMM dd, yyyy'}}
+    </div>
+    <div *ngIf="auth" class="post">
+        <button class="btn btn-lg btn-primary pull-xs-right" (click)="deleteComment(comment.id)" type="submit">
+          Delete
+        </button>
+      </div>
+  </div>
+</div>

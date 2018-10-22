@@ -1,0 +1,35 @@
+<div *ngIf="articles">
+    <ul>
+      <li *ngFor="let article of articles" >
+        <div class="articleBanner">
+          <div class="header">
+            <div class="left">
+                <img src = {{article.author.image}}/>
+            </div>
+            <div class="right">
+                <div class="name">{{article.author.username}}</div>
+                <div class="date">{{article.createdAt | date:'MMMM dd, yyyy'}}</div>
+            </div>
+            <div class="rightmost" *ngIf="fav">
+              <div class="name">
+                  <app-favorite-button
+                  [article]="article"
+                  (toggle)="onToggleFavorite($event,article)">
+                  <!-- <span class="hidden">{{ article.favorited ? 'Unfavorite' : 'Favorite' }}</span> -->
+                   <span class="counter">{{ article.favoritesCount }}</span>
+                </app-favorite-button>
+              </div>
+          </div>  
+          </div>
+          <div class="clear"></div>
+          <div class="bannerbody"></div>
+          <p class="title">{{article.title}}</p>
+          <p class="desc">{{article.description}}</p>
+          <a class="readmore" (click)="getDetails(article)">Read more...</a>
+        </div>
+      </li>
+    </ul>
+</div>
+<div *ngIf= "articles?.length === 0" >
+  <p>No articles yet...</p>
+</div>

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-8">
+  <article-list [articles]="articles"></article-list>
+  </div>
+  <div class="col-md-3 sidebar">
+      <p>Popular Tags</p>
+      <div id="tags" class="taglist">
+        <ul *ngFor="let tag of tags">
+           <li class="tag" (click)="getArticlesByTag(tag)">{{ tag }}</li>
+        </ul>
+  </div>
+</div>

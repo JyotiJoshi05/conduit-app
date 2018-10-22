@@ -1,0 +1,11 @@
+.banner{
+    background: cornflowerblue;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+.form{
+    padding:10px;
+}

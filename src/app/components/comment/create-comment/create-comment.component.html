@@ -1,0 +1,16 @@
+<div class="commentbody">
+  <form [formGroup]="createCommentForm" (ngSubmit)="postComment()">
+  <div class="commenttext">
+    <input
+        formControlName="body"
+        placeholder="Write your comments here.."
+        class="form-control form-control-lg"
+        type="text" />
+  </div>
+  <div class="post">
+    <button class="btn btn-lg btn-primary pull-xs-right" type="submit">
+      Post Comment
+    </button>
+  </div>
+  </form>
+</div>

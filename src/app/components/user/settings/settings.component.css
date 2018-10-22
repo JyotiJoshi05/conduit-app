@@ -1,0 +1,25 @@
+
+.form-control{
+    margin:12px;
+}
+.settings{
+    margin:10px;
+}
+.btn{
+    background-color: #2b7a78;
+}
+.logout{
+    border:solid rgb(139, 5, 5);
+    background: white;
+    color:rgb(110, 4, 4);
+    width:200px;
+    height:40px;
+    font-size:16px;
+}
+.logout:hover{
+    background:rgb(110, 4, 4);
+    color:white;
+    width:200px;
+    height:40px;    
+    margin-top:10px;
+}

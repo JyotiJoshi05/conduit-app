@@ -1,0 +1,51 @@
+<div class="create-article">
+    <div class="container page">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 col-xs-12">
+            <h1 class="text-xs-center">{{ title }}</h1>
+          <!-- <div class="errors ">
+            <error-list [errors]="errors" ></error-list>
+          </div>           -->
+          <form [formGroup]="createForm" >
+            <fieldset [disabled]="isSubmitting">
+                <input
+                  formControlName="articletitle"
+                  placeholder="URL of profile picture"
+                  class="form-control form-control-lg"
+                  type="text"
+                  />
+                  <div *ngIf="createForm.get('articletitle') && createForm.get('articletitle').touched && createForm.get('articletitle').invalid" class="alert alert-danger">Article Title is Required</div>
+                <input
+                  formControlName="articledesc"
+                  placeholder="Username"
+                  class="form-control form-control-lg"
+                  type="text" />
+                  <div *ngIf="createForm.get('articledesc') && createForm.get('articledesc').touched && createForm.get('articledesc').invalid" class="alert alert-danger">Article Description is Required</div>
+                <input
+                  formControlName="articlebody"
+                  placeholder="Short bio about you"
+                  class="form-control form-control-lg"
+                  type="text" />
+                  <div *ngIf="createForm.get('articlebody') && createForm.get('articlebody').touched && createForm.get('articlebody').invalid" class="alert alert-danger">Password is Required</div>
+                <input
+                  formControlName="articletags"
+                  placeholder="Email"
+                  class="form-control form-control-lg"
+                  type="text" />
+                <input
+                  formControlName="articletags"
+                  placeholder="New Password"
+                  class="form-control form-control-lg"
+                  type="text" />
+                <button class="btn btn-lg btn-primary settings pull-xs-right" type="submit">
+                Update Settings
+              </button>
+            </fieldset>
+            <button class="btn btn-lg btn-primary logout"  type="submit">
+                Or click here to logout.
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

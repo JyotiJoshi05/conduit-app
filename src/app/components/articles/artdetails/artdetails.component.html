@@ -1,0 +1,30 @@
+<div class="details" *ngIf="article">
+    <div class="banner"  >
+        <div  class="title" *ngIf="article">{{article.title}}</div>
+        <div class="desc">
+            <div class="uimage"><img src = {{article.author.image}}/></div>
+            <div class="uname">{{article.author.username}}</div>
+            <button *ngIf="author" (click)="editArticle()" class="follow edit">Edit Article</button>
+            <button  *ngIf="author" (click)="deleteArticle()" class="follow del">Delete Article</button>
+        </div>
+    </div>
+        <div class="details clear" *ngIf="article">
+            {{article.description}}
+        </div>
+        <div class="descright" *ngIf="article">
+            <div class="uimage"><img src = {{article.author.image}}/></div>
+            <div class="uname">{{article.author.username}}</div>
+            <button *ngIf="author" (click)="editArticle()" class="follow edit">Edit Article</button>
+            <button  *ngIf="author" (click)="deleteArticle()" class="follow del">Delete Article</button>
+        </div>
+        <div *ngIf="!auth"><a  [routerLink]="['/login']">Sign In</a> or <a class="link" [routerLink]="['/register']">Sign Up</a> to add comments.</div>
+    </div>
+    <div *ngIf="auth">
+        <create-comment></create-comment>
+    </div>
+    <div *ngIf="comments">
+    <app-comments  [comments]="comments"></app-comments>
+    </div>
+
+
+

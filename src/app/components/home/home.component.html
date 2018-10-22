@@ -1,0 +1,39 @@
+<div class="home-page">
+        <div class="banner">
+          <div class="container">
+            <h1 class="logo-font">conduit</h1>
+            <p>A place to share your <i>Angular</i> knowledge.</p>
+          </div>
+        </div>
+        <div class="container page">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="feed-toggle">
+                <ul class="nav nav-pills outline-active">
+                  <li class="nav-item" *ngIf="auth">
+                    <a class="nav-link " [routerLink]="['/feed']" routerLinkActive="active">
+                       Your Feed
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" routerLink="/" routerLinkActive="active">
+                       Global Feed
+                    </a>
+                  </li>                  
+                </ul>
+              </div>
+              <article-list [fav]='true' [articles]="articles"></article-list>
+            </div>
+            <div class="col-md-3">
+              <div class="sidebar">
+                <p>Popular Tags</p>
+                <div id="tags" class="taglist">
+                  <ul *ngFor="let tag of tags">
+                     <li class="tag" (click)="getArticlesByTag(tag)">{{ tag }}</li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

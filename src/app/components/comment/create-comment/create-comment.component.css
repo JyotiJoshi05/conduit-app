@@ -1,0 +1,16 @@
+.commentbody{
+    border: solid 1px lightgrey;
+    margin: 60px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.form-control{
+    font-size:12px;
+}
+.btn{
+    margin-top: 10px;
+    width: 120px;
+    font-size:14px;
+    height: 40px;
+    background-color: #2b7a78
+}

@@ -1,0 +1,14 @@
+.form-control{
+    margin:12px;
+    width:80%;
+}
+.form{
+    width:80%;
+    margin:0px auto;
+}
+.errors{
+    color: red;
+}
+.btn{
+    background-color: #2b7a78;
+}

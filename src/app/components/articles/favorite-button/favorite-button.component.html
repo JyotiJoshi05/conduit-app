@@ -1,0 +1,28 @@
+<button 
+  class="btn btn-sm"
+ [ngClass]="{ 'disabled' : isSubmitting,
+              'btn-outline-primary': !article.favorited,
+              'btn-primary': article.favorited }"
+ (click)="toggleFavorite()">
+ <fa-icon [icon]="heart"> </fa-icon> <ng-content></ng-content>
+</button>
+<style scoped="true">
+.btn-primary{
+    color: white;
+    background-color: #3aafa9;
+    background-image: none;
+    border-color: #3aafa9;
+  }
+  .btn-outline-primary {
+    color: #3aafa9;
+    background-color: transparent;
+    background-image: none;
+    border-color: #3aafa9;
+  }
+  .btn-outline-primary:hover{
+    color: white;
+    background-color: #3aafa9;
+    background-image: none;
+    border-color: #3aafa9;
+  }
+</style>

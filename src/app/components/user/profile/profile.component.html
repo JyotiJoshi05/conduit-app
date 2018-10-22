@@ -1,0 +1,12 @@
+<div class="profile">
+  <div class="main">
+      <div class="banner">
+          <img src = {{currentUser.image}}>
+          <h4 class="text-xs-center">{{currentUser.username}}</h4>
+        </div>
+  </div>
+  <div class="body">
+      <h6 class="text-xs-center">My Articles</h6>
+      <article-list [articles]="articles"></article-list>
+  </div>
+</div>
